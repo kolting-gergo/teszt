@@ -7,6 +7,7 @@
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
@@ -18,9 +19,29 @@
       font-size: 3rem;
       color: #2d3748;
     }
+    blockquote {
+      max-width: 32rem;
+      margin: 1.5rem 2rem 0;
+      padding-left: 1rem;
+      border-left: 4px solid #4299e1;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #4a5568;
+      text-align: center;
+    }
+    blockquote footer {
+      margin-top: 0.75rem;
+      font-style: normal;
+      font-size: 1rem;
+      color: #718096;
+    }
   </style>
 </head>
 <body>
   <h1>Hello World!</h1>
+  <blockquote>
+    „A nagy utazás is egyetlen lépéssel kezdődik.”
+    <footer>— Lao-ce</footer>
+  </blockquote>
 </body>
 </html>
