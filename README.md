@@ -46,9 +46,18 @@ A séma: [`lib/db/schema.ts`](lib/db/schema.ts). Drizzle Kit parancsok:
 
 ```bash
 npm run db:generate   # SQL migrációk generálása a sémából
+npm run db:migrate    # a generált migrációk lefuttatása a DB-n
 npm run db:push       # séma közvetlen szinkronizálása az adatbázisba
 npm run db:studio     # Drizzle Studio (böngészős adatbázis-nézegető)
 ```
+
+### Migráció a build során
+
+A `build` script (`node scripts/migrate.mjs && next build`) a fordítás előtt
+automatikusan lefuttatja a migrációkat (`drizzle-kit migrate`), **ha** a
+`DATABASE_URL` be van állítva (pl. Vercelen). Ha nincs (pl. lokális build DB
+nélkül), a lépés kimarad, és a `next build` ettől még lefut. Így első deploykor
+a `quotes`/`files` táblák a `./drizzle` migrációkból jönnek létre.
 
 ## Felépítés
 
