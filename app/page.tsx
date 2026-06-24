@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { listQuotes } from "./actions";
+import { QuoteGenerator } from "./quote-generator";
 import styles from "./page.module.css";
 
 type Integration = {
@@ -33,14 +35,35 @@ const integrations: Integration[] = [
   },
 ];
 
-export default function Home() {
+// Render at request time so freshly stored quotes appear.
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const stored = await listQuotes();
+
   return (
     <main className={styles.main}>
-      <h1 className={styles.heading}>Hello World!</h1>
-      <blockquote className={styles.quote}>
-        „A nagy utazás is egyetlen lépéssel kezdődik.”
-        <footer className={styles.quoteFooter}>— Lao-ce</footer>
-      </blockquote>
+      <h1 className={styles.heading}>Híres idézetek</h1>
+      <p className={styles.intro}>
+        Adj meg egy híres embert, és az AI visszaad tőle egy idézetet — amit el
+        is tárolunk az adatbázisban.
+      </p>
+
+      <QuoteGenerator />
+
+      {stored.length > 0 && (
+        <section className={styles.stored}>
+          <h2 className={styles.storedTitle}>Korábbi idézetek</h2>
+          <ul className={styles.storedList}>
+            {stored.map((q) => (
+              <li key={q.id} className={styles.storedItem}>
+                <span className={styles.storedQuote}>„{q.quote}”</span>
+                <span className={styles.storedPerson}>— {q.person}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className={styles.stack}>
         <h2 className={styles.stackTitle}>A stack</h2>

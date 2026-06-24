@@ -13,21 +13,129 @@
   text-align: center;
 }
 
-.quote {
-  max-width: 32rem;
-  margin: 1.5rem 0 0;
-  padding-left: 1rem;
-  border-left: 4px solid #4299e1;
-  font-style: italic;
-  font-size: 1.25rem;
-  color: #4a5568;
+.intro {
+  max-width: 34rem;
+  margin: 1rem 0 2rem;
   text-align: center;
+  color: #4a5568;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
-.quoteFooter {
-  margin-top: 0.75rem;
+/* --- Quote generator --- */
+.generator {
+  width: 100%;
+  max-width: 36rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.quoteForm {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.personInput {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.personInput:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.quoteButton {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #6b46c1;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.quoteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.resultQuote {
+  margin: 0;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid #6b46c1;
+  background: #faf5ff;
+  border-radius: 0.5rem;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #2d3748;
+}
+
+.resultFooter {
+  margin-top: 0.85rem;
   font-style: normal;
   font-size: 1rem;
+  font-weight: 600;
+  color: #6b46c1;
+}
+
+.quoteError {
+  margin: 0;
+  color: #c53030;
+  font-size: 0.95rem;
+}
+
+/* --- Stored quotes --- */
+.stored {
+  width: 100%;
+  max-width: 36rem;
+  margin-top: 3rem;
+}
+
+.storedTitle {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.storedList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.storedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.9rem 1.1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+}
+
+.storedQuote {
+  font-style: italic;
+  color: #2d3748;
+}
+
+.storedPerson {
+  font-size: 0.85rem;
+  font-weight: 600;
   color: #718096;
 }
 

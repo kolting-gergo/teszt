@@ -17,3 +17,20 @@ export const files = pgTable("files", {
 
 export type FileRecord = typeof files.$inferSelect;
 export type NewFileRecord = typeof files.$inferInsert;
+
+/**
+ * AI-generated quotes. A visitor enters a famous person's name; the AI Gateway
+ * returns one of their quotes, which is stored here.
+ */
+export const quotes = pgTable("quotes", {
+  id: serial("id").primaryKey(),
+  person: text("person").notNull(),
+  quote: text("quote").notNull(),
+  model: text("model"),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+export type QuoteRecord = typeof quotes.$inferSelect;
+export type NewQuoteRecord = typeof quotes.$inferInsert;
