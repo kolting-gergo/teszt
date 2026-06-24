@@ -1,0 +1,123 @@
+.main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 3rem;
+  color: #2d3748;
+  text-align: center;
+}
+
+.quote {
+  max-width: 32rem;
+  margin: 1.5rem 0 0;
+  padding-left: 1rem;
+  border-left: 4px solid #4299e1;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #4a5568;
+  text-align: center;
+}
+
+.quoteFooter {
+  margin-top: 0.75rem;
+  font-style: normal;
+  font-size: 1rem;
+  color: #718096;
+}
+
+.stack {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.stackTitle {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #718096;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: #4299e1;
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cardName {
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badgeOn {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.badgeOff {
+  background: #edf2f7;
+  color: #718096;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin: 0;
+}
+
+.cardEnv {
+  font-size: 0.75rem;
+  color: #805ad5;
+  background: #faf5ff;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  align-self: flex-start;
+}
+
+.cardCta {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4299e1;
+}
